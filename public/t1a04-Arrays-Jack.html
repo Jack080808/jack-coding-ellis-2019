@@ -1,0 +1,38 @@
+<script>
+
+function myExampleFunction(){
+     let myTemp = document.getElementById('myText01').value
+     let mySum = ' '
+     document.getElementById('myDiv01').innerHTML = '  '
+
+     myArray = new Array()
+     myArray[0] = 'The Hero'
+     myArray[1] = 'The Worst'
+     myArray[2] = 'The Best'
+     myArray[3] = 'OwO'
+     myArray[4] = 'UwU'
+     myArray[6] = 'UwU OwO UwU'
+     myArray[5] = 'UwU UwU'
+     myArray[666] = 'Satan'
+     myArray[69] = '>->'
+     myArray[420] = 'O_o'
+     myArray[100000] = 'You have alot of time on your hands'
+     myArray[10000000000000000000000000000000000] = 'How did you even manage this?'
+     myArray[99999999999999999999999999999999999] = 'Stop pls'
+     myArray[100000000000000000000000000000000000] = 'I give up'
+     myArray[10000000000000000000000000000000000000000000000000000000000000000] = 'Are you humen?'
+     for (let myLoop=0;   myLoop < myTemp;  myLoop++){
+         mySum += 'Loop #: ' + myLoop + ' array entry: ' + myArray[myLoop] +'<br>'
+     }
+     document.getElementById('myDiv01').innerHTML = mySum
+}
+
+</script>
+
+<input type=text id="myText01" value="4"><br>
+
+<input type=button value="loop-array-function-event" onmouseover="{
+     myExampleFunction()
+}">
+
+<div id="myDiv01">...</div>
