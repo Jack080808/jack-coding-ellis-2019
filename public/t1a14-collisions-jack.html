@@ -1,0 +1,122 @@
+<style>
+  
+  p={
+text-align: center;
+padding: 300px 100px;
+  }
+
+  .player {
+background-color:blue;
+  }
+  
+  .noTouchy {
+  background-color: red;
+  border-color: blue;
+  border-width: 5px;
+  -webkit-animation-name: example; 
+  -webkit-animation-duration: 4s; 
+  animation-name: example;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+    -webkit-transition: width 2s; 
+  transition: width 60s;
+}
+
+}
+@-webkit-keyframes example {
+0%   {background-color: purple;border-color: orange;}
+15%   {background-color: orange;border-color: red;}
+30%   {background-color: lime;border-color: yellow;}
+45%   {background-color: yellow;border-color: pink;}
+55%   {background-color: yellow;border-color: blue;}
+70%   {background-color: lime;border-color: indigo;}
+85%   {background-color: orange;border-color: violet;}
+100%   {background-color: purple;border-color: orange;}
+}
+
+@keyframes example {
+0%   {background-color: purple;border-color: red;}
+15%   {background-color: orange;border-color: orange;}
+30%   {background-color: lime;border-color: yellow;}
+45%   {background-color: yellow;border-color: green;}
+55%   {background-color: yellow;border-color: blue;}
+70%   {background-color: lime;border-color: indigo;}
+85%   {background-color: orange;border-color: violet;}
+100%   {background-color: purple;border-color: red;}
+
+
+
+
+</style>
+<body class="noTouchy";)
+<h2 align=center>t1a14 Collisions by Jack</h2>
+
+<script>
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+
+
+</script>
+
+
+<img id="myImg01" style="position:absolute; left:200; top:200; width:100; height:100; "<img src="https://66.media.tumblr.com/tumblr_m7l5c3rw8x1rx9adpo1_500.png"</>
+<img id="myImg02" style="position:absolute; left:400; top:200; width:100; height:100; "<img src="https://www.stickpng.com/assets/images/580b57fbd9996e24bc43bf06.png"</>
+
+
+<input type=button value="go Right"  onclick="{
+   document.getElementById('myImg01').style.left = 
+      parseInt(document.getElementById('myImg01').style.left) + 10
+   if ( myHitOther('myImg01','myImg02') ){
+       //alert('you win')
+      document.getElementById('myImg01').style.left = '500px'
+   }
+}">
+
+<input type=button value="go Left"  onclick="{
+   document.getElementById('myImg01').style.left = 
+      parseInt(document.getElementById('myImg01').style.left) - 10
+   if ( myHitOther('myImg01','myImg02') ){
+       //alert('you win')
+      document.getElementById('myImg01').style.left = '300px'
+   }
+}">
+
+<input type=button value="go Up"  onclick="{
+   document.getElementById('myImg01').style.top = 
+      parseInt(document.getElementById('myImg01').style.top) - 10
+   if ( myHitOther('myImg01','myImg02') ){
+       alert('you win, although this hat may be a bit big on me.')
+      document.getElementById('myImg01').style.top = '240px'
+      document.getElementById('myImg01').style.left = '400px'
+   }
+}">
+
+<input type=button value="go Down"  onclick="{
+   document.getElementById('myImg01').style.top = 
+      parseInt(document.getElementById('myImg01').style.top) + 10
+   if ( myHitOther('myImg01','myImg02') ){
+       //alert('you win')
+      document.getElementById('myImg01').style.top = '300px'
+   }
+}">
+
+<p> Enn ch'ra'th'grr'tyn the 34th says<br>"Help me put this hat on"<br>(AJ named the blobfish) </>
+</body>
+
+
+
